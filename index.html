@@ -25,12 +25,11 @@
             <button onclick="addToDo()">add To-Do</button>
         </form>
         <ul>
-            <li id="1">
-                <h3>
+            <li id="1"><h3>
                     Waschen
                 </h3>
-                <button onclick="inProgress()">in progress</button>
-                <button onclick="done()">done</button>
+                <button class="progress" onclick="inProgress(event)">in progress</button>
+                <button class="done">done</button>
                 <button onclick="editToDo()">edit</button>
                 <button onclick="deleteToDo()">delete</button>
             </li>
@@ -38,8 +37,8 @@
                 <h3>
                     Spülen
                 </h3>
-                <button onclick="inProgress()">in progress</button>
-                <button onclick="done()">done</button>
+                <button class="progress"onclick="inProgress(event)">in progress</button>
+                <button class="done">done</button>
                 <button onclick="editToDo()">edit</button>
                 <button onclick="deleteToDo()">delete</button>
             </li>
@@ -47,8 +46,8 @@
                 <h3>
                     Wäsche waschen
                 </h3>
-                <button onclick="inProgress()">in progress</button>
-                <button onclick="done()">done</button>
+                <button class="progress" onclick="inProgress(event)">in progress</button>
+                <button class="done">done</button>
                 <button onclick="editToDo()">edit</button>
                 <button onclick="deleteToDo()">delete</button>
             </li>
