@@ -1,17 +1,47 @@
-const h3 = document.querySelector("h3");
+// Das wird dann später zum Local Storage;
+let dataBase = [
+    {   aufgabe: 'waschen',
+        id: '1'
+    },
+    {   aufgabe: 'Busch Verprügeln',
+        id: '2'
+    }
+]
 
+//document.querySelector('#ToDoList>*')
+
+const toDoList = document.getElementById('toDoList');
+
+let id = 4;
+
+dataBase.forEach((toDo) => {
+    
+let newHTML = `
+<li id="ToDo${id}">
+<h3>${toDo.aufgabe}</h3>
+    <button class="progress" onclick="inProgress(event)">in progress</button>
+    <button class="done">done</button>
+     <button class="edit-button" onclick="editToDo(event)">edit</button>
+    <button onclick="deleteToDo()">delete</button>
+</li>`;
+
+//toDoList.innerHTML = toDoList.innerHTML + newHTML; Das selbe wie.
+toDoList.innerHTML += newHTML;
+id++;
+} )
+
+
+const h3 = document.querySelector("h3");
 // Selektion
 const forms = document.querySelectorAll("form");
 
 const inProgress = document.getElementsByClassName("progress");
-const done = document.getElementsByClassName("done");
 
+const done = document.getElementsByClassName("done");
 
 forms.forEach((form) =>
   form.addEventListener("submit", (e) => e.preventDefault())
 );
-
-
 
 function addList() { alert('not implemented') };
 function editList() { alert('not implemented') };
@@ -42,8 +72,6 @@ function editToDo(element) {
 
 function deleteToDo() { alert('not implemented') };
 
-
-
 //Aufgabe 1 Nico
 
 // id ab 4 incrementieren alle einmalig.
@@ -62,9 +90,6 @@ function deleteToDo() { alert('not implemented') };
 // function nowdoneFunk(event) {
 //     event.currentTarget.parentNode.querySelector("h3").style.color = 'red';
 // }
-
-
-
 
 // Done -> image ändern und style von der H3 ändern
 // Progress -> image ändern style von H3?
