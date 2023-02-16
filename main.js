@@ -11,14 +11,14 @@ forms.forEach((form) =>
 function addList() { alert('not implemented') };
 function editList() { alert('not implemented') };
 
-let lastId = document.querySelectorAll('#toDoList li').length+1;
+let lastId = document.querySelectorAll('#toDoList li').length + 1;
 
 function addToDo() {
-    const toDoName = document.querySelector('#toDoInput');
-    
-    console.log(toDoName.value);
+  const toDoName = document.querySelector('#toDoInput');
+
+  if (toDoName.value !== "" && toDoName.value !== " ") {
     const toDoList = document.getElementById('toDoList');
-    toDoList.innerHTML +=`  <li id="ToDo${lastId}">
+    toDoList.innerHTML += `  <li id="ToDo${lastId}">
                             <h3>${toDoName.value}</h3>
                                 <button onclick="inProgress(event)">in progress</button>
                                 <button onclick="done(event)">done</button>
@@ -27,18 +27,19 @@ function addToDo() {
                             </li>`;
     lastId++;
     toDoInput.value = "";
+  }
 };
 function ProgressFunk(event) {
-    event.currentTarget.parentNode.querySelector("h3").style.color = 'orange';     
+  event.currentTarget.parentNode.querySelector("h3").style.color = 'orange';
 };
 // Step 2: Add EventListener without html click.
 
 function inProgress(event) {
-    event.currentTarget.parentNode.querySelector('h3').style.color = 'orange';
+  event.currentTarget.parentNode.querySelector('h3').style.color = 'orange';
 }
 
 function done(event) {
-    event.currentTarget.parentNode.querySelector('h3').style.color = 'blue';
+  event.currentTarget.parentNode.querySelector('h3').style.color = 'blue';
 }
 
 function editToDo(event) {
@@ -51,7 +52,7 @@ function editToDo(event) {
 };
 
 const deleteToDo = (eventObject) => {
-    eventObject.currentTarget.parentNode.remove();
+  eventObject.currentTarget.parentNode.remove();
 }
 
 
