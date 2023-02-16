@@ -16,7 +16,9 @@ let lastId = document.querySelectorAll('#toDoList li').length + 1;
 function addToDo() {
   const toDoName = document.querySelector('#toDoInput');
 
-  if (toDoName.value !== "" && toDoName.value !== " ") {
+    
+
+  if (toDoName.value.trim() !== "") {
     const toDoList = document.getElementById('toDoList');
     toDoList.innerHTML += `  <li id="ToDo${lastId}">
                             <h3>${toDoName.value}</h3>
@@ -25,9 +27,10 @@ function addToDo() {
                                 <button class="edit-button" onclick="editToDo(event)">edit</button>
                                 <button onclick="deleteToDo(event)" class="deleteButton">delete</button>
                             </li>`;
-    lastId++;
+    lastId++;}
+    
     toDoInput.value = "";
-  }
+
 };
 function ProgressFunk(event) {
   event.currentTarget.parentNode.querySelector("h3").style.color = 'orange';
