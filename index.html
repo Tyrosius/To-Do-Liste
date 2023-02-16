@@ -11,7 +11,7 @@
 
 <body>
     <form action="">
-        <input type="text">
+        <input  type="text">
         <button onclick="addList()">add List</button>
         <button onclick="editList()">edit List</button>
         <button onclick="deleteList()">delete List</button>
@@ -21,7 +21,7 @@
             Liste 1
         </h2>
         <form action="">
-            <input type="text">
+            <input id="toDoInput" type="text">
             <button onclick="addToDo()">add To-Do</button>
         </form>
         <ul id="toDoList">
@@ -29,13 +29,11 @@
             <h3>Waschen</h3>
                 <button onclick="inProgress(event)">in progress</button>
                 <button onclick="done(event)">done</button>
-                 <button class="edit-button" onclick="editToDo(event)">edit</button>
+                <button class="edit-button" onclick="editToDo(event)">edit</button>
                 <button onclick="deleteToDo(event)" class="deleteButton">delete</button>
             </li>
             <li id="ToDo2">
-                <h3>
-                Spülen
-                </h3>
+                <h3>Spülen</h3>
                 <button onclick="inProgress(event)">in progress</button>
                 <button onclick="done(event)">done</button>
                 <button class="edit-button" onclick="editToDo(event)">edit</button>
@@ -51,7 +49,7 @@
         </ul>
     </div>
     <script src="./main.js"></script>
-    <script src="./modules/edit.js"></script>
+    <!-- <script src="./modules/edit.js"></script> -->
     
 </body>
 
