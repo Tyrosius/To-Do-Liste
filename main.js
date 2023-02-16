@@ -1,35 +1,6 @@
+import './module/edit.js'
+
 // Das wird dann später zum Local Storage;
-let dataBase = [
-    {   aufgabe: 'waschen',
-        id: '1'
-    },
-    {   aufgabe: 'Busch Verprügeln',
-        id: '2'
-    }
-]
-
-//document.querySelector('#ToDoList>*')
-
-const toDoList = document.getElementById('toDoList');
-
-let id = 4;
-
-dataBase.forEach((toDo) => {
-    
-let newHTML = `
-<li id="ToDo${id}">
-<h3>${toDo.aufgabe}</h3>
-    <button class="progress" onclick="inProgress(event)">in progress</button>
-    <button class="done">done</button>
-     <button class="edit-button" onclick="editToDo(event)">edit</button>
-    <button onclick="deleteToDo()">delete</button>
-</li>`;
-
-//toDoList.innerHTML = toDoList.innerHTML + newHTML; Das selbe wie.
-toDoList.innerHTML += newHTML;
-id++;
-} )
-
 
 const h3 = document.querySelector("h3");
 // Selektion
@@ -45,7 +16,6 @@ forms.forEach((form) =>
 
 function addList() { alert('not implemented') };
 function editList() { alert('not implemented') };
-function deleteList() { alert('not implemented') };
 
 function addToDo() { alert('not implemented') };
 function ProgressFunk(event) {
@@ -70,7 +40,29 @@ function editToDo(element) {
   }
 };
 
-function deleteToDo() { alert('not implemented') };
+//function deleteToDo() { alert('not implemented') };
+
+
+// const toDo= document.getElementById('toDoList');
+
+// toDo.addEventListener('click',() => {
+//     toDo.remove();
+// });
+
+const listItem= document.getElementById('ToDo1');
+
+const deleteToDo = (eventObject) => {
+    eventObject.currentTarget.parentNode.remove();
+}
+// const deleteButton = document.getElementsByClassName('deleteButton');
+
+// [...deleteButton].addEventListener('click',() => {
+//     listItem.remove();
+// })
+
+
+//function deleteList() { alert('not implemented') };
+
 
 //Aufgabe 1 Nico
 
@@ -85,6 +77,10 @@ function deleteToDo() { alert('not implemented') };
 // image ändern.
 
 //Aufgabe 3 Gerald
+
+//document.querySelector('#ToDoList>*')
+
+
 
 // Step 1: Write the functions hardcoded.
 // function nowdoneFunk(event) {
