@@ -16,7 +16,7 @@ let lastId = document.querySelectorAll('#toDoList li').length + 1;
 function addToDo() {
   const toDoName = document.querySelector('#toDoInput');
 
-    
+
 
   if (toDoName.value.trim() !== "") {
     const toDoList = document.getElementById('toDoList');
@@ -27,9 +27,10 @@ function addToDo() {
                                 <button class="edit-button" onclick="editToDo(event)">edit</button>
                                 <button onclick="deleteToDo(event)" class="deleteButton">delete</button>
                             </li>`;
-    lastId++;}
-    
-    toDoInput.value = "";
+    lastId++;
+  }
+
+  toDoInput.value = "";
 
 };
 function ProgressFunk(event) {
@@ -49,7 +50,7 @@ function editToDo(event) {
   const currentId = event.currentTarget.parentNode.id;
   const editButton = document.querySelector(`#${currentId}>.edit-button`);
   const newName = prompt("Neue Bezeichnung eingeben: ", editButton.parentNode.childNodes[1].innerHTML);
-  if (newName !== "" && newName !== null) {
+  if (newName.trim() !== "" && newName !== null) {
     editButton.parentNode.childNodes[1].innerHTML = newName;
   }
 };
