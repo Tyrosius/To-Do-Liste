@@ -1,14 +1,8 @@
-import './module/edit.js'
-
 // Das wird dann später zum Local Storage;
 
 const h3 = document.querySelector("h3");
 // Selektion
 const forms = document.querySelectorAll("form");
-
-const inProgress = document.getElementsByClassName("progress");
-
-const done = document.getElementsByClassName("done");
 
 forms.forEach((form) =>
   form.addEventListener("submit", (e) => e.preventDefault())
@@ -23,13 +17,13 @@ function ProgressFunk(event) {
 };
 // Step 2: Add EventListener without html click.
 
-[...done].forEach((button) =>{
-    button.addEventListener('click',(e) => e.currentTarget.parentNode.querySelector("h3").style.color = 'red')
-});
+function inProgress(element) {
+    element.currentTarget.parentNode.querySelector('h3').style.color = 'orange';
+}
 
-[...inProgress].forEach((button) =>{
-    button.addEventListener('click',(e) => e.currentTarget.parentNode.querySelector("h3").style.color = 'orange')
-});
+function done(element) {
+    element.currentTarget.parentNode.querySelector('h3').style.color = 'blue';
+}
 
 function editToDo(element) {
   const currentId = element.currentTarget.parentNode.id;
@@ -40,6 +34,11 @@ function editToDo(element) {
   }
 };
 
+const deleteToDo = (eventObject) => {
+    eventObject.currentTarget.parentNode.remove();
+}
+
+
 //function deleteToDo() { alert('not implemented') };
 
 
@@ -49,20 +48,13 @@ function editToDo(element) {
 //     toDo.remove();
 // });
 
-const listItem= document.getElementById('ToDo1');
-
-const deleteToDo = (eventObject) => {
-    eventObject.currentTarget.parentNode.remove();
-}
 // const deleteButton = document.getElementsByClassName('deleteButton');
 
 // [...deleteButton].addEventListener('click',() => {
 //     listItem.remove();
 // })
 
-
 //function deleteList() { alert('not implemented') };
-
 
 //Aufgabe 1 Nico
 
@@ -75,20 +67,6 @@ const deleteToDo = (eventObject) => {
 
 // edit: über Parent Element auf h3 zugreifen und editieren.
 // image ändern.
-
-//Aufgabe 3 Gerald
-
-//document.querySelector('#ToDoList>*')
-
-
-
-// Step 1: Write the functions hardcoded.
-// function nowdoneFunk(event) {
-//     event.currentTarget.parentNode.querySelector("h3").style.color = 'red';
-// }
-
-// Done -> image ändern und style von der H3 ändern
-// Progress -> image ändern style von H3?
 
 //Aufgabe 4. Anna
 
