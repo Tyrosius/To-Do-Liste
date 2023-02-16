@@ -41,7 +41,7 @@ let newHTML = `
 <li id="ToDo${id}">
 <h3>${toDo.aufgabe}</h3>
     <button class="progress" onclick="inProgress(event)">in progress</button>
-    <button class="done">done</button>
+    <button class="done" onclick="done(event)">done</button>
      <button class="edit-button" onclick="editToDo(event)">edit</button>
     <button onclick="deleteToDo(event)">delete</button>
 </li>`;
