@@ -1,6 +1,5 @@
 // Dom Elemente
 const toDoList = document.getElementById('toDoList');
-
 // fetch local Storage;
 
 Object.keys(localStorage).sort().forEach((key) => {
@@ -24,7 +23,6 @@ forms.forEach((form) =>
 
 function addList() { alert('not implemented') };
 function editList() { alert('not implemented') };
-
 
 let lastId = document.querySelectorAll('#toDoList li').length;
 console.log(lastId);
@@ -57,22 +55,16 @@ function done(event) {
 
 function editToDo(event) {
 
-  
-
   const currentId = event.currentTarget.parentNode.id;
-
   const regEx = /[a-zA-Z]+/;
-  const idNumber = currentId.replace(regEx,"");  
-  
-  
+  const idNumber = currentId.replace(regEx,"");    
   const editButton = document.querySelector(`#${currentId}>.edit-button`);
   const newName = prompt("Neue Bezeichnung eingeben: ", editButton.parentNode.childNodes[1].innerHTML);
   if (newName.trim() !== "" && newName !== null) {
     editButton.parentNode.childNodes[1].innerHTML = newName;
   }
 
-  localStorage.setItem(idNumber,newName);
-  };
+  localStorage.setItem(idNumber,newName);};
 
 const deleteToDo = (eventObject) => {
   
@@ -84,41 +76,10 @@ const deleteToDo = (eventObject) => {
 
 }
 
-//function deleteToDo() { alert('not implemented') };
-
-
-// const toDo= document.getElementById('toDoList');
-
-// toDo.addEventListener('click',() => {
-//     toDo.remove();
-// });
-
-// const deleteButton = document.getElementsByClassName('deleteButton');
-
-// [...deleteButton].addEventListener('click',() => {
-//     listItem.remove();
-// })
-
- const deleteList =  (eventObject) => { 
+ const deleteList =  () => { 
   localStorage.clear();
-  //document.querySelector()
 };
 
-//Aufgabe 1 Nico
-
-// id ab 4 incrementieren alle einmalig.
-// Auf Input value zugreifen.
-// Pseudocode:
-// AddButton.EventListener (Function () => ul.append(Input Value))
-
-//Aufgabe 2 Florian
-
-// edit: über Parent Element auf h3 zugreifen und editieren.
-// image ändern.
-
-//Aufgabe 4. Anna
-
-// löschen Pseudocode (e) => e.target.parentelement.remove
 
 
 
