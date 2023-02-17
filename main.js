@@ -67,7 +67,7 @@ function editToDo(event) {
   
   const editButton = document.querySelector(`#${currentId}>.edit-button`);
   const newName = prompt("Neue Bezeichnung eingeben: ", editButton.parentNode.childNodes[1].innerHTML);
-  if (newName !== "" && newName !== null) {
+  if (newName.trim() !== "" && newName !== null) {
     editButton.parentNode.childNodes[1].innerHTML = newName;
   }
 
